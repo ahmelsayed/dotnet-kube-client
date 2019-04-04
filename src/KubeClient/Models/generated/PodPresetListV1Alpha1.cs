@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items is a list of schema objects.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<PodPresetV1Alpha1> Items { get; } = new List<PodPresetV1Alpha1>();
+        [JsonProperty("items")]
+        public override IList<PodPresetV1Alpha1> Items { get; set; }
     }
 }

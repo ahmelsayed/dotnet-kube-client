@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace KubeClient.Samples.NoobExec
 {
+    using System.Linq;
     using Extensions.KubeConfig.Models;
     using Extensions.WebSockets;
     using Models;
@@ -69,7 +70,7 @@ namespace KubeClient.Samples.NoobExec
 
                     if (!String.IsNullOrWhiteSpace(options.ContainerName))
                     {
-                        ContainerStatusV1 targetContainer = targetPod.Status.ContainerStatuses.Find(
+                        ContainerStatusV1 targetContainer = targetPod.Status.ContainerStatuses.FirstOrDefault(
                             container => container.Name == options.ContainerName
                         );
                         if (targetContainer == null)

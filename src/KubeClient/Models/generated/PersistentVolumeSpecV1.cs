@@ -161,8 +161,8 @@ namespace KubeClient.Models
         ///     AccessModes contains all ways the volume can be mounted. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes
         /// </summary>
         [YamlMember(Alias = "accessModes")]
-        [JsonProperty("accessModes", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> AccessModes { get; } = new List<string>();
+        [JsonProperty("accessModes")]
+        public IList<string> AccessModes { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="AccessModes"/> property should be serialised.
@@ -187,8 +187,8 @@ namespace KubeClient.Models
         ///     A list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#mount-options
         /// </summary>
         [YamlMember(Alias = "mountOptions")]
-        [JsonProperty("mountOptions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> MountOptions { get; } = new List<string>();
+        [JsonProperty("mountOptions")]
+        public IList<string> MountOptions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="MountOptions"/> property should be serialised.
@@ -213,8 +213,8 @@ namespace KubeClient.Models
         ///     A description of the persistent volume's resources and capacity. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity
         /// </summary>
         [YamlMember(Alias = "capacity")]
-        [JsonProperty("capacity", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Capacity { get; } = new Dictionary<string, string>();
+        [JsonProperty("capacity")]
+        public Dictionary<string, string> Capacity { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Capacity"/> property should be serialised.

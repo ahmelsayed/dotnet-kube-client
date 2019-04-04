@@ -49,8 +49,8 @@ namespace KubeClient.Models
         ///     Route service traffic to pods with label keys and values matching this selector. If empty or not present, the service is assumed to have an external process managing its endpoints, which Kubernetes will not modify. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName. More info: https://kubernetes.io/docs/concepts/services-networking/service/
         /// </summary>
         [YamlMember(Alias = "selector")]
-        [JsonProperty("selector", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Selector { get; } = new Dictionary<string, string>();
+        [JsonProperty("selector")]
+        public Dictionary<string, string> Selector { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Selector"/> property should be serialised.
@@ -61,8 +61,8 @@ namespace KubeClient.Models
         ///     externalIPs is a list of IP addresses for which nodes in the cluster will also accept traffic for this service.  These IPs are not managed by Kubernetes.  The user is responsible for ensuring that traffic arrives at a node with this IP.  A common example is external load-balancers that are not part of the Kubernetes system.
         /// </summary>
         [YamlMember(Alias = "externalIPs")]
-        [JsonProperty("externalIPs", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> ExternalIPs { get; } = new List<string>();
+        [JsonProperty("externalIPs")]
+        public IList<string> ExternalIPs { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="ExternalIPs"/> property should be serialised.
@@ -73,8 +73,8 @@ namespace KubeClient.Models
         ///     If specified and supported by the platform, this will restrict traffic through the cloud-provider load-balancer will be restricted to the specified client IPs. This field will be ignored if the cloud-provider does not support the feature." More info: https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/
         /// </summary>
         [YamlMember(Alias = "loadBalancerSourceRanges")]
-        [JsonProperty("loadBalancerSourceRanges", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> LoadBalancerSourceRanges { get; } = new List<string>();
+        [JsonProperty("loadBalancerSourceRanges")]
+        public IList<string> LoadBalancerSourceRanges { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="LoadBalancerSourceRanges"/> property should be serialised.
@@ -86,8 +86,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "port")]
         [YamlMember(Alias = "ports")]
-        [JsonProperty("ports", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ServicePortV1> Ports { get; } = new List<ServicePortV1>();
+        [JsonProperty("ports")]
+        public IList<ServicePortV1> Ports { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Ports"/> property should be serialised.

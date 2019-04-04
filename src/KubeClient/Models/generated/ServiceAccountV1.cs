@@ -33,8 +33,8 @@ namespace KubeClient.Models
         ///     ImagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images in pods that reference this ServiceAccount. ImagePullSecrets are distinct from Secrets because Secrets can be mounted in the pod, but ImagePullSecrets are only accessed by the kubelet. More info: https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
         /// </summary>
         [YamlMember(Alias = "imagePullSecrets")]
-        [JsonProperty("imagePullSecrets", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<LocalObjectReferenceV1> ImagePullSecrets { get; } = new List<LocalObjectReferenceV1>();
+        [JsonProperty("imagePullSecrets")]
+        public IList<LocalObjectReferenceV1> ImagePullSecrets { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="ImagePullSecrets"/> property should be serialised.
@@ -46,8 +46,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "name")]
         [YamlMember(Alias = "secrets")]
-        [JsonProperty("secrets", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ObjectReferenceV1> Secrets { get; } = new List<ObjectReferenceV1>();
+        [JsonProperty("secrets")]
+        public IList<ObjectReferenceV1> Secrets { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Secrets"/> property should be serialised.

@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     items is the list of CronJobs.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<CronJobV2Alpha1> Items { get; } = new List<CronJobV2Alpha1>();
+        [JsonProperty("items")]
+        public override IList<CronJobV2Alpha1> Items { get; set; }
     }
 }

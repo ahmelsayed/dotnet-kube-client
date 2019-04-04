@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     Extra information about the requesting user. See user.Info interface for details.
         /// </summary>
         [YamlMember(Alias = "extra")]
-        [JsonProperty("extra", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, List<string>> Extra { get; } = new Dictionary<string, List<string>>();
+        [JsonProperty("extra")]
+        public Dictionary<string, IList<string>> Extra { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Extra"/> property should be serialised.
@@ -40,8 +40,8 @@ namespace KubeClient.Models
         ///     Group information about the requesting user. See user.Info interface for details.
         /// </summary>
         [YamlMember(Alias = "groups")]
-        [JsonProperty("groups", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Groups { get; } = new List<string>();
+        [JsonProperty("groups")]
+        public IList<string> Groups { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Groups"/> property should be serialised.
@@ -53,8 +53,8 @@ namespace KubeClient.Models
         ///          https://tools.ietf.org/html/rfc5280#section-4.2.1.12
         /// </summary>
         [YamlMember(Alias = "usages")]
-        [JsonProperty("usages", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Usages { get; } = new List<string>();
+        [JsonProperty("usages")]
+        public IList<string> Usages { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Usages"/> property should be serialised.

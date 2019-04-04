@@ -31,8 +31,8 @@ namespace KubeClient.Models
         ///     Subjects holds references to the objects the role applies to.
         /// </summary>
         [YamlMember(Alias = "subjects")]
-        [JsonProperty("subjects", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<SubjectV1Alpha1> Subjects { get; } = new List<SubjectV1Alpha1>();
+        [JsonProperty("subjects")]
+        public IList<SubjectV1Alpha1> Subjects { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Subjects"/> property should be serialised.

@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
         /// </summary>
         [YamlMember(Alias = "limits")]
-        [JsonProperty("limits", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Limits { get; } = new Dictionary<string, string>();
+        [JsonProperty("limits")]
+        public Dictionary<string, string> Limits { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Limits"/> property should be serialised.
@@ -26,8 +26,8 @@ namespace KubeClient.Models
         ///     Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
         /// </summary>
         [YamlMember(Alias = "requests")]
-        [JsonProperty("requests", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Requests { get; } = new Dictionary<string, string>();
+        [JsonProperty("requests")]
+        public Dictionary<string, string> Requests { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Requests"/> property should be serialised.

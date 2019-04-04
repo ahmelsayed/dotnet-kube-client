@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     APIGroups is the API groups the resources belong to. '*' is all groups. If '*' is present, the length of the slice must be one. Required.
         /// </summary>
         [YamlMember(Alias = "apiGroups")]
-        [JsonProperty("apiGroups", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> ApiGroups { get; } = new List<string>();
+        [JsonProperty("apiGroups")]
+        public IList<string> ApiGroups { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="ApiGroups"/> property should be serialised.
@@ -26,8 +26,8 @@ namespace KubeClient.Models
         ///     APIVersions is the API versions the resources belong to. '*' is all versions. If '*' is present, the length of the slice must be one. Required.
         /// </summary>
         [YamlMember(Alias = "apiVersions")]
-        [JsonProperty("apiVersions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> ApiVersions { get; } = new List<string>();
+        [JsonProperty("apiVersions")]
+        public IList<string> ApiVersions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="ApiVersions"/> property should be serialised.
@@ -38,8 +38,8 @@ namespace KubeClient.Models
         ///     Operations is the operations the admission hook cares about - CREATE, UPDATE, or * for all operations. If '*' is present, the length of the slice must be one. Required.
         /// </summary>
         [YamlMember(Alias = "operations")]
-        [JsonProperty("operations", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Operations { get; } = new List<string>();
+        [JsonProperty("operations")]
+        public IList<string> Operations { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Operations"/> property should be serialised.
@@ -56,8 +56,8 @@ namespace KubeClient.Models
         ///     Depending on the enclosing object, subresources might not be allowed. Required.
         /// </summary>
         [YamlMember(Alias = "resources")]
-        [JsonProperty("resources", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Resources { get; } = new List<string>();
+        [JsonProperty("resources")]
+        public IList<string> Resources { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Resources"/> property should be serialised.

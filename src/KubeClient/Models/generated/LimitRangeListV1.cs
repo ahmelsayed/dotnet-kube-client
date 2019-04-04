@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items is a list of LimitRange objects. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<LimitRangeV1> Items { get; } = new List<LimitRangeV1>();
+        [JsonProperty("items")]
+        public override IList<LimitRangeV1> Items { get; set; }
     }
 }

@@ -21,8 +21,8 @@ namespace KubeClient.Models
         ///     Selector is a label query over pods that should match the Replicas count. If Selector is empty, it is defaulted to the labels present on the Pod template. Label keys and values that must match in order to be controlled by this replication controller, if empty defaulted to labels on Pod template. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
         /// </summary>
         [YamlMember(Alias = "selector")]
-        [JsonProperty("selector", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Selector { get; } = new Dictionary<string, string>();
+        [JsonProperty("selector")]
+        public Dictionary<string, string> Selector { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Selector"/> property should be serialised.

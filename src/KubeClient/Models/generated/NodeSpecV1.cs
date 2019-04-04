@@ -49,8 +49,8 @@ namespace KubeClient.Models
         ///     If specified, the node's taints.
         /// </summary>
         [YamlMember(Alias = "taints")]
-        [JsonProperty("taints", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<TaintV1> Taints { get; } = new List<TaintV1>();
+        [JsonProperty("taints")]
+        public IList<TaintV1> Taints { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Taints"/> property should be serialised.

@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items is a list of Roles
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<RoleV1Alpha1> Items { get; } = new List<RoleV1Alpha1>();
+        [JsonProperty("items")]
+        public override IList<RoleV1Alpha1> Items { get; set; }
     }
 }

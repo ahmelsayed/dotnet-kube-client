@@ -21,8 +21,8 @@ namespace KubeClient.Models
         ///     ranges are the allowed ranges of fs groups.  If you would like to force a single fs group then supply a single range with the same start and end. Required for MustRunAs.
         /// </summary>
         [YamlMember(Alias = "ranges")]
-        [JsonProperty("ranges", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<IDRangeV1Beta1> Ranges { get; } = new List<IDRangeV1Beta1>();
+        [JsonProperty("ranges")]
+        public IList<IDRangeV1Beta1> Ranges { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Ranges"/> property should be serialised.

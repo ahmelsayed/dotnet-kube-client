@@ -28,8 +28,8 @@ namespace KubeClient.Models
         ///     Custom headers to set in the request. HTTP allows repeated headers.
         /// </summary>
         [YamlMember(Alias = "httpHeaders")]
-        [JsonProperty("httpHeaders", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<HTTPHeaderV1> HttpHeaders { get; } = new List<HTTPHeaderV1>();
+        [JsonProperty("httpHeaders")]
+        public IList<HTTPHeaderV1> HttpHeaders { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="HttpHeaders"/> property should be serialised.

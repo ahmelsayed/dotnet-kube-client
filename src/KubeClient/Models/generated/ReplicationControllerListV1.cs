@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     List of replication controllers. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<ReplicationControllerV1> Items { get; } = new List<ReplicationControllerV1>();
+        [JsonProperty("items")]
+        public override IList<ReplicationControllerV1> Items { get; set; }
     }
 }

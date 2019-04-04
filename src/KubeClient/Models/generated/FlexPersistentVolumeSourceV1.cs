@@ -35,8 +35,8 @@ namespace KubeClient.Models
         ///     Optional: Extra command options if any.
         /// </summary>
         [YamlMember(Alias = "options")]
-        [JsonProperty("options", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Options { get; } = new Dictionary<string, string>();
+        [JsonProperty("options")]
+        public Dictionary<string, string> Options { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Options"/> property should be serialised.

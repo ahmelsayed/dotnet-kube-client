@@ -168,14 +168,12 @@ namespace KubeClient.Extensions.CustomResources
                 Description = enumType.Name
             };
 
-            schema.Enum.AddRange(
-                Enum.GetNames(enumType).Select(
+            schema.Enum = Enum.GetNames(enumType).Select(
                     memberName => new JSONV1Beta1
                     {
                         Raw = memberName
                     }
-                )
-            );
+                ).ToList();
 
             return schema;
         }
@@ -239,9 +237,7 @@ namespace KubeClient.Extensions.CustomResources
                 schemaProps.Properties[property.Name] = GenerateSchema(property.PropertyType);
             }
 
-            schemaProps.Required.AddRange(
-                GetRequiredPropertyNames(objectType)
-            );
+            schemaProps.Required = GetRequiredPropertyNames(objectType).ToList();
             
             return schemaProps;
         }

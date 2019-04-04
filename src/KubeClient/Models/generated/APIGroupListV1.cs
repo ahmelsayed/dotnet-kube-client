@@ -14,7 +14,7 @@ namespace KubeClient.Models
         ///     groups is a list of APIGroup.
         /// </summary>
         [YamlMember(Alias = "groups")]
-        [JsonProperty("groups", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<APIGroupV1> Groups { get; } = new List<APIGroupV1>();
+        [JsonProperty("groups")]
+        public IList<APIGroupV1> Groups { get; set; }
     }
 }

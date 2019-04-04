@@ -360,7 +360,7 @@ namespace KubeClient.ApiMetadata
                         };
                     }
                     else
-                        groupVersions = apiGroup.Versions;
+                        groupVersions = apiGroup.Versions.ToList();
 
                     var metadataLoaders = new List<Task<List<KubeApiMetadata>>>();
 

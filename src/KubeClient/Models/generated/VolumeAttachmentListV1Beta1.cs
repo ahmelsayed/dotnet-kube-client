@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items is the list of VolumeAttachments
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<VolumeAttachmentV1Beta1> Items { get; } = new List<VolumeAttachmentV1Beta1>();
+        [JsonProperty("items")]
+        public override IList<VolumeAttachmentV1Beta1> Items { get; set; }
     }
 }

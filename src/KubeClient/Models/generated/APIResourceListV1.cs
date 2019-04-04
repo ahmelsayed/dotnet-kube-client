@@ -21,7 +21,7 @@ namespace KubeClient.Models
         ///     resources contains the name of the resources and if they are namespaced.
         /// </summary>
         [YamlMember(Alias = "resources")]
-        [JsonProperty("resources", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<APIResourceV1> Resources { get; } = new List<APIResourceV1>();
+        [JsonProperty("resources")]
+        public IList<APIResourceV1> Resources { get; set; }
     }
 }

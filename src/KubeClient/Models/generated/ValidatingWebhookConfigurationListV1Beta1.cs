@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     List of ValidatingWebhookConfiguration.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<ValidatingWebhookConfigurationV1Beta1> Items { get; } = new List<ValidatingWebhookConfigurationV1Beta1>();
+        [JsonProperty("items")]
+        public override IList<ValidatingWebhookConfigurationV1Beta1> Items { get; set; }
     }
 }

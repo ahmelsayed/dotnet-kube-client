@@ -21,8 +21,8 @@ namespace KubeClient.Models
         ///     Hostnames for the above IP address.
         /// </summary>
         [YamlMember(Alias = "hostnames")]
-        [JsonProperty("hostnames", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Hostnames { get; } = new List<string>();
+        [JsonProperty("hostnames")]
+        public IList<string> Hostnames { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Hostnames"/> property should be serialised.

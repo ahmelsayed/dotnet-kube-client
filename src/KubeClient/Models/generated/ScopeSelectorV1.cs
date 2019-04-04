@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     A list of scope selector requirements by scope of the resources.
         /// </summary>
         [YamlMember(Alias = "matchExpressions")]
-        [JsonProperty("matchExpressions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ScopedResourceSelectorRequirementV1> MatchExpressions { get; } = new List<ScopedResourceSelectorRequirementV1>();
+        [JsonProperty("matchExpressions")]
+        public IList<ScopedResourceSelectorRequirementV1> MatchExpressions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="MatchExpressions"/> property should be serialised.

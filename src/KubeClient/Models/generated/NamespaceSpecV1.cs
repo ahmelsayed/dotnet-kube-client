@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
         /// </summary>
         [YamlMember(Alias = "finalizers")]
-        [JsonProperty("finalizers", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Finalizers { get; } = new List<string>();
+        [JsonProperty("finalizers")]
+        public IList<string> Finalizers { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Finalizers"/> property should be serialised.

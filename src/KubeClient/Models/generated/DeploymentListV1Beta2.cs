@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items is the list of Deployments.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<DeploymentV1Beta2> Items { get; } = new List<DeploymentV1Beta2>();
+        [JsonProperty("items")]
+        public override IList<DeploymentV1Beta2> Items { get; set; }
     }
 }

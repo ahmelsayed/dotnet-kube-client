@@ -21,8 +21,8 @@ namespace KubeClient.Models
         ///     values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.
         /// </summary>
         [YamlMember(Alias = "values")]
-        [JsonProperty("values", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Values { get; } = new List<string>();
+        [JsonProperty("values")]
+        public IList<string> Values { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Values"/> property should be serialised.

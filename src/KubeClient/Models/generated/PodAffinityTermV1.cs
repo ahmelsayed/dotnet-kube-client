@@ -21,8 +21,8 @@ namespace KubeClient.Models
         ///     namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means "this pod's namespace"
         /// </summary>
         [YamlMember(Alias = "namespaces")]
-        [JsonProperty("namespaces", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Namespaces { get; } = new List<string>();
+        [JsonProperty("namespaces")]
+        public IList<string> Namespaces { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Namespaces"/> property should be serialised.

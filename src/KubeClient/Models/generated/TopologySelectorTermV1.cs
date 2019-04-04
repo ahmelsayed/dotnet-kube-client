@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     A list of topology selector requirements by labels.
         /// </summary>
         [YamlMember(Alias = "matchLabelExpressions")]
-        [JsonProperty("matchLabelExpressions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<TopologySelectorLabelRequirementV1> MatchLabelExpressions { get; } = new List<TopologySelectorLabelRequirementV1>();
+        [JsonProperty("matchLabelExpressions")]
+        public IList<TopologySelectorLabelRequirementV1> MatchLabelExpressions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="MatchLabelExpressions"/> property should be serialised.

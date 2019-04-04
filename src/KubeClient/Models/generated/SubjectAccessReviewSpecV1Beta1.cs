@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     Extra corresponds to the user.Info.GetExtra() method from the authenticator.  Since that is input to the authorizer it needs a reflection here.
         /// </summary>
         [YamlMember(Alias = "extra")]
-        [JsonProperty("extra", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, List<string>> Extra { get; } = new Dictionary<string, List<string>>();
+        [JsonProperty("extra")]
+        public Dictionary<string, IList<string>> Extra { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Extra"/> property should be serialised.
@@ -33,8 +33,8 @@ namespace KubeClient.Models
         ///     Groups is the groups you're testing for.
         /// </summary>
         [YamlMember(Alias = "group")]
-        [JsonProperty("group", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Group { get; } = new List<string>();
+        [JsonProperty("group")]
+        public IList<string> Group { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Group"/> property should be serialised.

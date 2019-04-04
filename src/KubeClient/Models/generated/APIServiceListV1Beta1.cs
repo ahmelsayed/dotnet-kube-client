@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Description not provided.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<APIServiceV1Beta1> Items { get; } = new List<APIServiceV1Beta1>();
+        [JsonProperty("items")]
+        public override IList<APIServiceV1Beta1> Items { get; set; }
     }
 }

@@ -29,8 +29,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "type")]
         [YamlMember(Alias = "conditions")]
-        [JsonProperty("conditions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ReplicaSetConditionV1> Conditions { get; } = new List<ReplicaSetConditionV1>();
+        [JsonProperty("conditions")]
+        public IList<ReplicaSetConditionV1> Conditions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Conditions"/> property should be serialised.

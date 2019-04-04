@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     List of InitializerConfiguration.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<InitializerConfigurationV1Alpha1> Items { get; } = new List<InitializerConfigurationV1Alpha1>();
+        [JsonProperty("items")]
+        public override IList<InitializerConfigurationV1Alpha1> Items { get; set; }
     }
 }

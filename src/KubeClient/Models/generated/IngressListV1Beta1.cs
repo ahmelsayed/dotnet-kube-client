@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items is the list of Ingress.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<IngressV1Beta1> Items { get; } = new List<IngressV1Beta1>();
+        [JsonProperty("items")]
+        public override IList<IngressV1Beta1> Items { get; set; }
     }
 }

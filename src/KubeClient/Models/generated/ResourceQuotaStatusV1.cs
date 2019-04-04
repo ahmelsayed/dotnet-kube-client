@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     Hard is the set of enforced hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
         /// </summary>
         [YamlMember(Alias = "hard")]
-        [JsonProperty("hard", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Hard { get; } = new Dictionary<string, string>();
+        [JsonProperty("hard")]
+        public Dictionary<string, string> Hard { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Hard"/> property should be serialised.
@@ -26,8 +26,8 @@ namespace KubeClient.Models
         ///     Used is the current observed total usage of the resource in the namespace.
         /// </summary>
         [YamlMember(Alias = "used")]
-        [JsonProperty("used", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Used { get; } = new Dictionary<string, string>();
+        [JsonProperty("used")]
+        public Dictionary<string, string> Used { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Used"/> property should be serialised.

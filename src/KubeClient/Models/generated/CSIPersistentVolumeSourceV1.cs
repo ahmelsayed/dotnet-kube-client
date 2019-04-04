@@ -18,7 +18,7 @@ namespace KubeClient.Models
         public string FsType { get; set; }
 
         /// <summary>
-        ///     VolumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to refer to the volume on all subsequent calls. Required.
+        ///     VolumeHandle is the unique volume name returned by the CSI volume pluginâ€™s CreateVolume to refer to the volume on all subsequent calls. Required.
         /// </summary>
         [YamlMember(Alias = "volumeHandle")]
         [JsonProperty("volumeHandle", NullValueHandling = NullValueHandling.Include)]
@@ -56,8 +56,8 @@ namespace KubeClient.Models
         ///     Attributes of the volume to publish.
         /// </summary>
         [YamlMember(Alias = "volumeAttributes")]
-        [JsonProperty("volumeAttributes", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> VolumeAttributes { get; } = new Dictionary<string, string>();
+        [JsonProperty("volumeAttributes")]
+        public Dictionary<string, string> VolumeAttributes { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="VolumeAttributes"/> property should be serialised.

@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     A list of node selector requirements by node's labels.
         /// </summary>
         [YamlMember(Alias = "matchExpressions")]
-        [JsonProperty("matchExpressions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<NodeSelectorRequirementV1> MatchExpressions { get; } = new List<NodeSelectorRequirementV1>();
+        [JsonProperty("matchExpressions")]
+        public IList<NodeSelectorRequirementV1> MatchExpressions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="MatchExpressions"/> property should be serialised.
@@ -26,8 +26,8 @@ namespace KubeClient.Models
         ///     A list of node selector requirements by node's fields.
         /// </summary>
         [YamlMember(Alias = "matchFields")]
-        [JsonProperty("matchFields", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<NodeSelectorRequirementV1> MatchFields { get; } = new List<NodeSelectorRequirementV1>();
+        [JsonProperty("matchFields")]
+        public IList<NodeSelectorRequirementV1> MatchFields { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="MatchFields"/> property should be serialised.

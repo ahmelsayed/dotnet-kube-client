@@ -98,8 +98,8 @@ namespace KubeClient.Models
         ///     NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
         /// </summary>
         [YamlMember(Alias = "nodeSelector")]
-        [JsonProperty("nodeSelector", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> NodeSelector { get; } = new Dictionary<string, string>();
+        [JsonProperty("nodeSelector")]
+        public Dictionary<string, string> NodeSelector { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="NodeSelector"/> property should be serialised.
@@ -118,16 +118,16 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "name")]
         [YamlMember(Alias = "containers")]
-        [JsonProperty("containers", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ContainerV1> Containers { get; } = new List<ContainerV1>();
+        [JsonProperty("containers")]
+        public IList<ContainerV1> Containers { get; set; }
 
         /// <summary>
         ///     HostAliases is an optional list of hosts and IPs that will be injected into the pod's hosts file if specified. This is only valid for non-hostNetwork pods.
         /// </summary>
         [MergeStrategy(Key = "ip")]
         [YamlMember(Alias = "hostAliases")]
-        [JsonProperty("hostAliases", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<HostAliasV1> HostAliases { get; } = new List<HostAliasV1>();
+        [JsonProperty("hostAliases")]
+        public IList<HostAliasV1> HostAliases { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="HostAliases"/> property should be serialised.
@@ -139,8 +139,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "name")]
         [YamlMember(Alias = "imagePullSecrets")]
-        [JsonProperty("imagePullSecrets", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<LocalObjectReferenceV1> ImagePullSecrets { get; } = new List<LocalObjectReferenceV1>();
+        [JsonProperty("imagePullSecrets")]
+        public IList<LocalObjectReferenceV1> ImagePullSecrets { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="ImagePullSecrets"/> property should be serialised.
@@ -152,8 +152,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "name")]
         [YamlMember(Alias = "initContainers")]
-        [JsonProperty("initContainers", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ContainerV1> InitContainers { get; } = new List<ContainerV1>();
+        [JsonProperty("initContainers")]
+        public IList<ContainerV1> InitContainers { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="InitContainers"/> property should be serialised.
@@ -164,8 +164,8 @@ namespace KubeClient.Models
         ///     If specified, all readiness gates will be evaluated for pod readiness. A pod is ready when all its containers are ready AND all conditions specified in the readiness gates have status equal to "True" More info: https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md
         /// </summary>
         [YamlMember(Alias = "readinessGates")]
-        [JsonProperty("readinessGates", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<PodReadinessGateV1> ReadinessGates { get; } = new List<PodReadinessGateV1>();
+        [JsonProperty("readinessGates")]
+        public IList<PodReadinessGateV1> ReadinessGates { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="ReadinessGates"/> property should be serialised.
@@ -183,8 +183,8 @@ namespace KubeClient.Models
         ///     If specified, the pod's tolerations.
         /// </summary>
         [YamlMember(Alias = "tolerations")]
-        [JsonProperty("tolerations", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<TolerationV1> Tolerations { get; } = new List<TolerationV1>();
+        [JsonProperty("tolerations")]
+        public IList<TolerationV1> Tolerations { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Tolerations"/> property should be serialised.
@@ -197,8 +197,8 @@ namespace KubeClient.Models
         [RetainKeysStrategy]
         [MergeStrategy(Key = "name")]
         [YamlMember(Alias = "volumes")]
-        [JsonProperty("volumes", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<VolumeV1> Volumes { get; } = new List<VolumeV1>();
+        [JsonProperty("volumes")]
+        public IList<VolumeV1> Volumes { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Volumes"/> property should be serialised.

@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     List of pods. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<PodV1> Items { get; } = new List<PodV1>();
+        [JsonProperty("items")]
+        public override IList<PodV1> Items { get; set; }
     }
 }

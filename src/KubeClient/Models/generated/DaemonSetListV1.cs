@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     A list of daemon sets.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<DaemonSetV1> Items { get; } = new List<DaemonSetV1>();
+        [JsonProperty("items")]
+        public override IList<DaemonSetV1> Items { get; set; }
     }
 }

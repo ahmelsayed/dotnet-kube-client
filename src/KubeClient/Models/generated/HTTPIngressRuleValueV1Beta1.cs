@@ -14,7 +14,7 @@ namespace KubeClient.Models
         ///     A collection of paths that map requests to backends.
         /// </summary>
         [YamlMember(Alias = "paths")]
-        [JsonProperty("paths", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<HTTPIngressPathV1Beta1> Paths { get; } = new List<HTTPIngressPathV1Beta1>();
+        [JsonProperty("paths")]
+        public IList<HTTPIngressPathV1Beta1> Paths { get; set; }
     }
 }

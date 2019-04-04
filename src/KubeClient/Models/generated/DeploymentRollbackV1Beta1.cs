@@ -28,8 +28,8 @@ namespace KubeClient.Models
         ///     The annotations to be updated to a deployment
         /// </summary>
         [YamlMember(Alias = "updatedAnnotations")]
-        [JsonProperty("updatedAnnotations", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> UpdatedAnnotations { get; } = new Dictionary<string, string>();
+        [JsonProperty("updatedAnnotations")]
+        public Dictionary<string, string> UpdatedAnnotations { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="UpdatedAnnotations"/> property should be serialised.

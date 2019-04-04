@@ -21,7 +21,7 @@ namespace KubeClient.Models
         ///     list of volume projections
         /// </summary>
         [YamlMember(Alias = "sources")]
-        [JsonProperty("sources", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<VolumeProjectionV1> Sources { get; } = new List<VolumeProjectionV1>();
+        [JsonProperty("sources")]
+        public IList<VolumeProjectionV1> Sources { get; set; }
     }
 }

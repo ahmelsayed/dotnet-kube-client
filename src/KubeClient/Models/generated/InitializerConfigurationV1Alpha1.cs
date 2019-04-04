@@ -25,8 +25,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "name")]
         [YamlMember(Alias = "initializers")]
-        [JsonProperty("initializers", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<InitializerV1Alpha1> Initializers { get; } = new List<InitializerV1Alpha1>();
+        [JsonProperty("initializers")]
+        public IList<InitializerV1Alpha1> Initializers { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Initializers"/> property should be serialised.

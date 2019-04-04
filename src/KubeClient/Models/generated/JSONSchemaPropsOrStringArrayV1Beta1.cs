@@ -21,7 +21,7 @@ namespace KubeClient.Models
         ///     Description not provided.
         /// </summary>
         [YamlMember(Alias = "Property")]
-        [JsonProperty("Property", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Property { get; } = new List<string>();
+        [JsonProperty("Property")]
+        public IList<string> Property { get; set; }
     }
 }

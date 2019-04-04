@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     list of horizontal pod autoscaler objects.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<HorizontalPodAutoscalerV1> Items { get; } = new List<HorizontalPodAutoscalerV1>();
+        [JsonProperty("items")]
+        public override IList<HorizontalPodAutoscalerV1> Items { get; set; }
     }
 }

@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     hard is the set of desired hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
         /// </summary>
         [YamlMember(Alias = "hard")]
-        [JsonProperty("hard", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Hard { get; } = new Dictionary<string, string>();
+        [JsonProperty("hard")]
+        public Dictionary<string, string> Hard { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Hard"/> property should be serialised.
@@ -33,8 +33,8 @@ namespace KubeClient.Models
         ///     A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.
         /// </summary>
         [YamlMember(Alias = "scopes")]
-        [JsonProperty("scopes", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Scopes { get; } = new List<string>();
+        [JsonProperty("scopes")]
+        public IList<string> Scopes { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Scopes"/> property should be serialised.

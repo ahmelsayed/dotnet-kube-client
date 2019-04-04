@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     Added capabilities
         /// </summary>
         [YamlMember(Alias = "add")]
-        [JsonProperty("add", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Add { get; } = new List<string>();
+        [JsonProperty("add")]
+        public IList<string> Add { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Add"/> property should be serialised.
@@ -26,8 +26,8 @@ namespace KubeClient.Models
         ///     Removed capabilities
         /// </summary>
         [YamlMember(Alias = "drop")]
-        [JsonProperty("drop", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Drop { get; } = new List<string>();
+        [JsonProperty("drop")]
+        public IList<string> Drop { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Drop"/> property should be serialised.

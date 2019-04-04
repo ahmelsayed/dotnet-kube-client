@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items individual CustomResourceDefinitions
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<CustomResourceDefinitionV1Beta1> Items { get; } = new List<CustomResourceDefinitionV1Beta1>();
+        [JsonProperty("items")]
+        public override IList<CustomResourceDefinitionV1Beta1> Items { get; set; }
     }
 }

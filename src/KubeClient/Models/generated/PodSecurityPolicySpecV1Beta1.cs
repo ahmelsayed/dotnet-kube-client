@@ -77,8 +77,8 @@ namespace KubeClient.Models
         ///     allowedCapabilities is a list of capabilities that can be requested to add to the container. Capabilities in this field may be added at the pod author's discretion. You must not list a capability in both allowedCapabilities and requiredDropCapabilities.
         /// </summary>
         [YamlMember(Alias = "allowedCapabilities")]
-        [JsonProperty("allowedCapabilities", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> AllowedCapabilities { get; } = new List<string>();
+        [JsonProperty("allowedCapabilities")]
+        public IList<string> AllowedCapabilities { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="AllowedCapabilities"/> property should be serialised.
@@ -89,8 +89,8 @@ namespace KubeClient.Models
         ///     allowedFlexVolumes is a whitelist of allowed Flexvolumes.  Empty or nil indicates that all Flexvolumes may be used.  This parameter is effective only when the usage of the Flexvolumes is allowed in the "volumes" field.
         /// </summary>
         [YamlMember(Alias = "allowedFlexVolumes")]
-        [JsonProperty("allowedFlexVolumes", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<AllowedFlexVolumeV1Beta1> AllowedFlexVolumes { get; } = new List<AllowedFlexVolumeV1Beta1>();
+        [JsonProperty("allowedFlexVolumes")]
+        public IList<AllowedFlexVolumeV1Beta1> AllowedFlexVolumes { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="AllowedFlexVolumes"/> property should be serialised.
@@ -101,8 +101,8 @@ namespace KubeClient.Models
         ///     allowedHostPaths is a white list of allowed host paths. Empty indicates that all host paths may be used.
         /// </summary>
         [YamlMember(Alias = "allowedHostPaths")]
-        [JsonProperty("allowedHostPaths", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<AllowedHostPathV1Beta1> AllowedHostPaths { get; } = new List<AllowedHostPathV1Beta1>();
+        [JsonProperty("allowedHostPaths")]
+        public IList<AllowedHostPathV1Beta1> AllowedHostPaths { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="AllowedHostPaths"/> property should be serialised.
@@ -115,8 +115,8 @@ namespace KubeClient.Models
         ///     Examples: e.g. "foo/*" allows "foo/bar", "foo/baz", etc. e.g. "foo.*" allows "foo.bar", "foo.baz", etc.
         /// </summary>
         [YamlMember(Alias = "allowedUnsafeSysctls")]
-        [JsonProperty("allowedUnsafeSysctls", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> AllowedUnsafeSysctls { get; } = new List<string>();
+        [JsonProperty("allowedUnsafeSysctls")]
+        public IList<string> AllowedUnsafeSysctls { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="AllowedUnsafeSysctls"/> property should be serialised.
@@ -127,8 +127,8 @@ namespace KubeClient.Models
         ///     defaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability.  You may not list a capability in both defaultAddCapabilities and requiredDropCapabilities. Capabilities added here are implicitly allowed, and need not be included in the allowedCapabilities list.
         /// </summary>
         [YamlMember(Alias = "defaultAddCapabilities")]
-        [JsonProperty("defaultAddCapabilities", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> DefaultAddCapabilities { get; } = new List<string>();
+        [JsonProperty("defaultAddCapabilities")]
+        public IList<string> DefaultAddCapabilities { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="DefaultAddCapabilities"/> property should be serialised.
@@ -141,8 +141,8 @@ namespace KubeClient.Models
         ///     Examples: e.g. "foo/*" forbids "foo/bar", "foo/baz", etc. e.g. "foo.*" forbids "foo.bar", "foo.baz", etc.
         /// </summary>
         [YamlMember(Alias = "forbiddenSysctls")]
-        [JsonProperty("forbiddenSysctls", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> ForbiddenSysctls { get; } = new List<string>();
+        [JsonProperty("forbiddenSysctls")]
+        public IList<string> ForbiddenSysctls { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="ForbiddenSysctls"/> property should be serialised.
@@ -153,8 +153,8 @@ namespace KubeClient.Models
         ///     hostPorts determines which host port ranges are allowed to be exposed.
         /// </summary>
         [YamlMember(Alias = "hostPorts")]
-        [JsonProperty("hostPorts", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<HostPortRangeV1Beta1> HostPorts { get; } = new List<HostPortRangeV1Beta1>();
+        [JsonProperty("hostPorts")]
+        public IList<HostPortRangeV1Beta1> HostPorts { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="HostPorts"/> property should be serialised.
@@ -165,8 +165,8 @@ namespace KubeClient.Models
         ///     requiredDropCapabilities are the capabilities that will be dropped from the container.  These are required to be dropped and cannot be added.
         /// </summary>
         [YamlMember(Alias = "requiredDropCapabilities")]
-        [JsonProperty("requiredDropCapabilities", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> RequiredDropCapabilities { get; } = new List<string>();
+        [JsonProperty("requiredDropCapabilities")]
+        public IList<string> RequiredDropCapabilities { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="RequiredDropCapabilities"/> property should be serialised.
@@ -184,8 +184,8 @@ namespace KubeClient.Models
         ///     volumes is a white list of allowed volume plugins. Empty indicates that no volumes may be used. To allow all volumes you may use '*'.
         /// </summary>
         [YamlMember(Alias = "volumes")]
-        [JsonProperty("volumes", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Volumes { get; } = new List<string>();
+        [JsonProperty("volumes")]
+        public IList<string> Volumes { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Volumes"/> property should be serialised.

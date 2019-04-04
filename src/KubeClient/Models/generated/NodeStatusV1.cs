@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     List of volumes that are attached to the node.
         /// </summary>
         [YamlMember(Alias = "volumesAttached")]
-        [JsonProperty("volumesAttached", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<AttachedVolumeV1> VolumesAttached { get; } = new List<AttachedVolumeV1>();
+        [JsonProperty("volumesAttached")]
+        public IList<AttachedVolumeV1> VolumesAttached { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="VolumesAttached"/> property should be serialised.
@@ -26,8 +26,8 @@ namespace KubeClient.Models
         ///     Allocatable represents the resources of a node that are available for scheduling. Defaults to Capacity.
         /// </summary>
         [YamlMember(Alias = "allocatable")]
-        [JsonProperty("allocatable", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Allocatable { get; } = new Dictionary<string, string>();
+        [JsonProperty("allocatable")]
+        public Dictionary<string, string> Allocatable { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Allocatable"/> property should be serialised.
@@ -45,8 +45,8 @@ namespace KubeClient.Models
         ///     List of attachable volumes in use (mounted) by the node.
         /// </summary>
         [YamlMember(Alias = "volumesInUse")]
-        [JsonProperty("volumesInUse", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> VolumesInUse { get; } = new List<string>();
+        [JsonProperty("volumesInUse")]
+        public IList<string> VolumesInUse { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="VolumesInUse"/> property should be serialised.
@@ -72,8 +72,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "type")]
         [YamlMember(Alias = "addresses")]
-        [JsonProperty("addresses", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<NodeAddressV1> Addresses { get; } = new List<NodeAddressV1>();
+        [JsonProperty("addresses")]
+        public IList<NodeAddressV1> Addresses { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Addresses"/> property should be serialised.
@@ -85,8 +85,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "type")]
         [YamlMember(Alias = "conditions")]
-        [JsonProperty("conditions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<NodeConditionV1> Conditions { get; } = new List<NodeConditionV1>();
+        [JsonProperty("conditions")]
+        public IList<NodeConditionV1> Conditions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Conditions"/> property should be serialised.
@@ -104,8 +104,8 @@ namespace KubeClient.Models
         ///     List of container images on this node
         /// </summary>
         [YamlMember(Alias = "images")]
-        [JsonProperty("images", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ContainerImageV1> Images { get; } = new List<ContainerImageV1>();
+        [JsonProperty("images")]
+        public IList<ContainerImageV1> Images { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Images"/> property should be serialised.
@@ -116,8 +116,8 @@ namespace KubeClient.Models
         ///     Capacity represents the total resources of a node. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity
         /// </summary>
         [YamlMember(Alias = "capacity")]
-        [JsonProperty("capacity", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Capacity { get; } = new Dictionary<string, string>();
+        [JsonProperty("capacity")]
+        public Dictionary<string, string> Capacity { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Capacity"/> property should be serialised.

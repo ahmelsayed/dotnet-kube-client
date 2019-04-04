@@ -21,8 +21,8 @@ namespace KubeClient.Models
         ///     Min usage constraints on this kind by resource name.
         /// </summary>
         [YamlMember(Alias = "min")]
-        [JsonProperty("min", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Min { get; } = new Dictionary<string, string>();
+        [JsonProperty("min")]
+        public Dictionary<string, string> Min { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Min"/> property should be serialised.
@@ -33,8 +33,8 @@ namespace KubeClient.Models
         ///     MaxLimitRequestRatio if specified, the named resource must have a request and limit that are both non-zero where limit divided by request is less than or equal to the enumerated value; this represents the max burst for the named resource.
         /// </summary>
         [YamlMember(Alias = "maxLimitRequestRatio")]
-        [JsonProperty("maxLimitRequestRatio", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> MaxLimitRequestRatio { get; } = new Dictionary<string, string>();
+        [JsonProperty("maxLimitRequestRatio")]
+        public Dictionary<string, string> MaxLimitRequestRatio { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="MaxLimitRequestRatio"/> property should be serialised.
@@ -45,8 +45,8 @@ namespace KubeClient.Models
         ///     Default resource requirement limit value by resource name if resource limit is omitted.
         /// </summary>
         [YamlMember(Alias = "default")]
-        [JsonProperty("default", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Default { get; } = new Dictionary<string, string>();
+        [JsonProperty("default")]
+        public Dictionary<string, string> Default { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Default"/> property should be serialised.
@@ -57,8 +57,8 @@ namespace KubeClient.Models
         ///     DefaultRequest is the default resource requirement request value by resource name if resource request is omitted.
         /// </summary>
         [YamlMember(Alias = "defaultRequest")]
-        [JsonProperty("defaultRequest", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> DefaultRequest { get; } = new Dictionary<string, string>();
+        [JsonProperty("defaultRequest")]
+        public Dictionary<string, string> DefaultRequest { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="DefaultRequest"/> property should be serialised.
@@ -69,8 +69,8 @@ namespace KubeClient.Models
         ///     Max usage constraints on this kind by resource name.
         /// </summary>
         [YamlMember(Alias = "max")]
-        [JsonProperty("max", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Max { get; } = new Dictionary<string, string>();
+        [JsonProperty("max")]
+        public Dictionary<string, string> Max { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Max"/> property should be serialised.

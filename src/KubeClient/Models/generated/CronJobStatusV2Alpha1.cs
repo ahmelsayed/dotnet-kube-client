@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     A list of pointers to currently running jobs.
         /// </summary>
         [YamlMember(Alias = "active")]
-        [JsonProperty("active", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ObjectReferenceV1> Active { get; } = new List<ObjectReferenceV1>();
+        [JsonProperty("active")]
+        public IList<ObjectReferenceV1> Active { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Active"/> property should be serialised.

@@ -15,8 +15,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "name")]
         [YamlMember(Alias = "pending")]
-        [JsonProperty("pending", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<InitializerV1> Pending { get; } = new List<InitializerV1>();
+        [JsonProperty("pending")]
+        public IList<InitializerV1> Pending { get; set; }
 
         /// <summary>
         ///     If result is set with the Failure field, the object will be persisted to storage and then deleted, ensuring that other clients can observe the deletion.

@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     List of MutatingWebhookConfiguration.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<MutatingWebhookConfigurationV1Beta1> Items { get; } = new List<MutatingWebhookConfigurationV1Beta1>();
+        [JsonProperty("items")]
+        public override IList<MutatingWebhookConfigurationV1Beta1> Items { get; set; }
     }
 }

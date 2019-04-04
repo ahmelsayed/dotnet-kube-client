@@ -68,8 +68,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "type")]
         [YamlMember(Alias = "conditions")]
-        [JsonProperty("conditions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<PodConditionV1> Conditions { get; } = new List<PodConditionV1>();
+        [JsonProperty("conditions")]
+        public IList<PodConditionV1> Conditions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Conditions"/> property should be serialised.
@@ -80,8 +80,8 @@ namespace KubeClient.Models
         ///     The list has one entry per container in the manifest. Each entry is currently the output of `docker inspect`. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status
         /// </summary>
         [YamlMember(Alias = "containerStatuses")]
-        [JsonProperty("containerStatuses", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ContainerStatusV1> ContainerStatuses { get; } = new List<ContainerStatusV1>();
+        [JsonProperty("containerStatuses")]
+        public IList<ContainerStatusV1> ContainerStatuses { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="ContainerStatuses"/> property should be serialised.
@@ -92,8 +92,8 @@ namespace KubeClient.Models
         ///     The list has one entry per init container in the manifest. The most recent successful init container will have ready = true, the most recently started container will have startTime set. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status
         /// </summary>
         [YamlMember(Alias = "initContainerStatuses")]
-        [JsonProperty("initContainerStatuses", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ContainerStatusV1> InitContainerStatuses { get; } = new List<ContainerStatusV1>();
+        [JsonProperty("initContainerStatuses")]
+        public IList<ContainerStatusV1> InitContainerStatuses { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="InitContainerStatuses"/> property should be serialised.

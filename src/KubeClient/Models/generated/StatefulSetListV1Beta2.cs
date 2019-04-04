@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Description not provided.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<StatefulSetV1Beta2> Items { get; } = new List<StatefulSetV1Beta2>();
+        [JsonProperty("items")]
+        public override IList<StatefulSetV1Beta2> Items { get; set; }
     }
 }

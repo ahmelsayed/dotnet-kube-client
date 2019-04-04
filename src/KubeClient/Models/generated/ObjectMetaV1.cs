@@ -98,8 +98,8 @@ namespace KubeClient.Models
         ///     Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
         /// </summary>
         [YamlMember(Alias = "annotations")]
-        [JsonProperty("annotations", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Annotations { get; } = new Dictionary<string, string>();
+        [JsonProperty("annotations")]
+        public Dictionary<string, string> Annotations { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Annotations"/> property should be serialised.
@@ -118,8 +118,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy]
         [YamlMember(Alias = "finalizers")]
-        [JsonProperty("finalizers", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Finalizers { get; } = new List<string>();
+        [JsonProperty("finalizers")]
+        public IList<string> Finalizers { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Finalizers"/> property should be serialised.
@@ -139,8 +139,8 @@ namespace KubeClient.Models
         ///     Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
         /// </summary>
         [YamlMember(Alias = "labels")]
-        [JsonProperty("labels", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Labels { get; } = new Dictionary<string, string>();
+        [JsonProperty("labels")]
+        public Dictionary<string, string> Labels { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Labels"/> property should be serialised.
@@ -152,8 +152,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "uid")]
         [YamlMember(Alias = "ownerReferences")]
-        [JsonProperty("ownerReferences", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<OwnerReferenceV1> OwnerReferences { get; } = new List<OwnerReferenceV1>();
+        [JsonProperty("ownerReferences")]
+        public IList<OwnerReferenceV1> OwnerReferences { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="OwnerReferences"/> property should be serialised.

@@ -89,7 +89,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     The list's resources.
         /// </summary>
-        public abstract List<TResource> Items { get; }
+        public abstract IList<TResource> Items { get; set; }
 
         /// <summary>
         ///     Enumerate the list's items.

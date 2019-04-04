@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     EnvFrom defines the collection of EnvFromSource to inject into containers.
         /// </summary>
         [YamlMember(Alias = "envFrom")]
-        [JsonProperty("envFrom", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<EnvFromSourceV1> EnvFrom { get; } = new List<EnvFromSourceV1>();
+        [JsonProperty("envFrom")]
+        public IList<EnvFromSourceV1> EnvFrom { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="EnvFrom"/> property should be serialised.
@@ -33,8 +33,8 @@ namespace KubeClient.Models
         ///     VolumeMounts defines the collection of VolumeMount to inject into containers.
         /// </summary>
         [YamlMember(Alias = "volumeMounts")]
-        [JsonProperty("volumeMounts", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<VolumeMountV1> VolumeMounts { get; } = new List<VolumeMountV1>();
+        [JsonProperty("volumeMounts")]
+        public IList<VolumeMountV1> VolumeMounts { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="VolumeMounts"/> property should be serialised.
@@ -45,8 +45,8 @@ namespace KubeClient.Models
         ///     Volumes defines the collection of Volume to inject into the pod.
         /// </summary>
         [YamlMember(Alias = "volumes")]
-        [JsonProperty("volumes", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<VolumeV1> Volumes { get; } = new List<VolumeV1>();
+        [JsonProperty("volumes")]
+        public IList<VolumeV1> Volumes { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Volumes"/> property should be serialised.
@@ -57,8 +57,8 @@ namespace KubeClient.Models
         ///     Env defines the collection of EnvVar to inject into containers.
         /// </summary>
         [YamlMember(Alias = "env")]
-        [JsonProperty("env", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<EnvVarV1> Env { get; } = new List<EnvVarV1>();
+        [JsonProperty("env")]
+        public IList<EnvVarV1> Env { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Env"/> property should be serialised.

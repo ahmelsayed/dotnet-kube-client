@@ -361,7 +361,7 @@ class KubeArrayDataType(KubeDataType):
         )
 
     def to_clr_type_name(self, is_nullable=False):
-        return 'List<{}>'.format(
+        return 'IList<{}>'.format(
             get_cts_type_name(self.element_type.to_clr_type_name(is_nullable)).replace('?', '') # List<DateTime?> would be odious to deal with.
         )
 
@@ -674,12 +674,11 @@ def main():
                         if model_property.merge_key and len(model_property.merge_key) > len(model_property.json_name):
                             class_file.write('        [MergeStrategy(Key = "%s")]%s' % (model_property.merge_key, LINE_ENDING))
 
-                    class_file.write('        [JsonProperty("%s", ObjectCreationHandling = ObjectCreationHandling.Reuse)]%s' % (model_property.json_name, LINE_ENDING))
+                    class_file.write('        [JsonProperty("%s")]%s' % (model_property.json_name, LINE_ENDING))
 
-                    class_file.write('        public %s %s { get; } = new %s();%s' % (
+                    class_file.write('        public %s %s { get; set; }%s' % (
                         model_property.data_type.to_clr_type_name(),
                         model_property.name,
-                        model_property.data_type.to_clr_type_name(),
                         LINE_ENDING
                     ))
 
@@ -731,11 +730,10 @@ def main():
                     class_file.write('        ///     ' + property_summary_line + LINE_ENDING)
                 class_file.write('        /// </summary>' + LINE_ENDING)
 
-                class_file.write('        [JsonProperty("%s", ObjectCreationHandling = ObjectCreationHandling.Reuse)]%s' % (model_property.json_name, LINE_ENDING))
-                class_file.write('        public override %s %s { get; } = new %s();%s' % (
+                class_file.write('        [JsonProperty("%s")]%s' % (model_property.json_name, LINE_ENDING))
+                class_file.write('        public override %s %s { get; set; }%s' % (
                     model_property.data_type.to_clr_type_name(),
                     model_property.name,
-                    model_property.data_type.to_clr_type_name(),
                     LINE_ENDING
                 ))
 

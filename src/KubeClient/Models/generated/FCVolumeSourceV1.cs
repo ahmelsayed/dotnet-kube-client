@@ -28,8 +28,8 @@ namespace KubeClient.Models
         ///     Optional: FC target worldwide names (WWNs)
         /// </summary>
         [YamlMember(Alias = "targetWWNs")]
-        [JsonProperty("targetWWNs", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> TargetWWNs { get; } = new List<string>();
+        [JsonProperty("targetWWNs")]
+        public IList<string> TargetWWNs { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="TargetWWNs"/> property should be serialised.
@@ -40,8 +40,8 @@ namespace KubeClient.Models
         ///     Optional: FC volume world wide identifiers (wwids) Either wwids or combination of targetWWNs and lun must be set, but not both simultaneously.
         /// </summary>
         [YamlMember(Alias = "wwids")]
-        [JsonProperty("wwids", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Wwids { get; } = new List<string>();
+        [JsonProperty("wwids")]
+        public IList<string> Wwids { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Wwids"/> property should be serialised.

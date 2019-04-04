@@ -42,8 +42,8 @@ namespace KubeClient.Models
         ///     volumeClaimTemplates is a list of claims that pods are allowed to reference. The StatefulSet controller is responsible for mapping network identities to claims in a way that maintains the identity of a pod. Every claim in this list must have at least one matching (by name) volumeMount in one container in the template. A claim in this list takes precedence over any volumes in the template, with the same name.
         /// </summary>
         [YamlMember(Alias = "volumeClaimTemplates")]
-        [JsonProperty("volumeClaimTemplates", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<PersistentVolumeClaimV1> VolumeClaimTemplates { get; } = new List<PersistentVolumeClaimV1>();
+        [JsonProperty("volumeClaimTemplates")]
+        public IList<PersistentVolumeClaimV1> VolumeClaimTemplates { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="VolumeClaimTemplates"/> property should be serialised.

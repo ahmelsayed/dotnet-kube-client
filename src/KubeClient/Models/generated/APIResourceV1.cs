@@ -56,8 +56,8 @@ namespace KubeClient.Models
         ///     categories is a list of the grouped resources this resource belongs to (e.g. 'all')
         /// </summary>
         [YamlMember(Alias = "categories")]
-        [JsonProperty("categories", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Categories { get; } = new List<string>();
+        [JsonProperty("categories")]
+        public IList<string> Categories { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Categories"/> property should be serialised.
@@ -68,8 +68,8 @@ namespace KubeClient.Models
         ///     shortNames is a list of suggested short names of the resource.
         /// </summary>
         [YamlMember(Alias = "shortNames")]
-        [JsonProperty("shortNames", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> ShortNames { get; } = new List<string>();
+        [JsonProperty("shortNames")]
+        public IList<string> ShortNames { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="ShortNames"/> property should be serialised.
@@ -80,7 +80,7 @@ namespace KubeClient.Models
         ///     verbs is a list of supported kube verbs (this includes get, list, watch, create, update, patch, delete, deletecollection, and proxy)
         /// </summary>
         [YamlMember(Alias = "verbs")]
-        [JsonProperty("verbs", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Verbs { get; } = new List<string>();
+        [JsonProperty("verbs")]
+        public IList<string> Verbs { get; set; }
     }
 }

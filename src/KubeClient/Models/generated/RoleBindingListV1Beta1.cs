@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items is a list of RoleBindings
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<RoleBindingV1Beta1> Items { get; } = new List<RoleBindingV1Beta1>();
+        [JsonProperty("items")]
+        public override IList<RoleBindingV1Beta1> Items { get; set; }
     }
 }

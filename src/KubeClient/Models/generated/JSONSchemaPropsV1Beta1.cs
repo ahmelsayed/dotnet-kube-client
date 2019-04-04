@@ -28,8 +28,8 @@ namespace KubeClient.Models
         ///     Description not provided.
         /// </summary>
         [YamlMember(Alias = "required")]
-        [JsonProperty("required", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Required { get; } = new List<string>();
+        [JsonProperty("required")]
+        public IList<string> Required { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Required"/> property should be serialised.
@@ -68,8 +68,8 @@ namespace KubeClient.Models
         ///     Description not provided.
         /// </summary>
         [YamlMember(Alias = "allOf")]
-        [JsonProperty("allOf", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<JSONSchemaPropsV1Beta1> AllOf { get; } = new List<JSONSchemaPropsV1Beta1>();
+        [JsonProperty("allOf")]
+        public IList<JSONSchemaPropsV1Beta1> AllOf { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="AllOf"/> property should be serialised.
@@ -80,8 +80,8 @@ namespace KubeClient.Models
         ///     Description not provided.
         /// </summary>
         [YamlMember(Alias = "anyOf")]
-        [JsonProperty("anyOf", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<JSONSchemaPropsV1Beta1> AnyOf { get; } = new List<JSONSchemaPropsV1Beta1>();
+        [JsonProperty("anyOf")]
+        public IList<JSONSchemaPropsV1Beta1> AnyOf { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="AnyOf"/> property should be serialised.
@@ -99,8 +99,8 @@ namespace KubeClient.Models
         ///     Description not provided.
         /// </summary>
         [YamlMember(Alias = "oneOf")]
-        [JsonProperty("oneOf", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<JSONSchemaPropsV1Beta1> OneOf { get; } = new List<JSONSchemaPropsV1Beta1>();
+        [JsonProperty("oneOf")]
+        public IList<JSONSchemaPropsV1Beta1> OneOf { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="OneOf"/> property should be serialised.
@@ -125,8 +125,8 @@ namespace KubeClient.Models
         ///     Description not provided.
         /// </summary>
         [YamlMember(Alias = "enum")]
-        [JsonProperty("enum", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<JSONV1Beta1> Enum { get; } = new List<JSONV1Beta1>();
+        [JsonProperty("enum")]
+        public IList<JSONV1Beta1> Enum { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Enum"/> property should be serialised.
@@ -193,8 +193,8 @@ namespace KubeClient.Models
         ///     Description not provided.
         /// </summary>
         [YamlMember(Alias = "definitions")]
-        [JsonProperty("definitions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, JSONSchemaPropsV1Beta1> Definitions { get; } = new Dictionary<string, JSONSchemaPropsV1Beta1>();
+        [JsonProperty("definitions")]
+        public Dictionary<string, JSONSchemaPropsV1Beta1> Definitions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Definitions"/> property should be serialised.
@@ -205,8 +205,8 @@ namespace KubeClient.Models
         ///     Description not provided.
         /// </summary>
         [YamlMember(Alias = "dependencies")]
-        [JsonProperty("dependencies", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, JSONSchemaPropsOrStringArrayV1Beta1> Dependencies { get; } = new Dictionary<string, JSONSchemaPropsOrStringArrayV1Beta1>();
+        [JsonProperty("dependencies")]
+        public Dictionary<string, JSONSchemaPropsOrStringArrayV1Beta1> Dependencies { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Dependencies"/> property should be serialised.
@@ -259,8 +259,8 @@ namespace KubeClient.Models
         ///     Description not provided.
         /// </summary>
         [YamlMember(Alias = "patternProperties")]
-        [JsonProperty("patternProperties", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, JSONSchemaPropsV1Beta1> PatternProperties { get; } = new Dictionary<string, JSONSchemaPropsV1Beta1>();
+        [JsonProperty("patternProperties")]
+        public Dictionary<string, JSONSchemaPropsV1Beta1> PatternProperties { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="PatternProperties"/> property should be serialised.
@@ -271,8 +271,8 @@ namespace KubeClient.Models
         ///     Description not provided.
         /// </summary>
         [YamlMember(Alias = "properties")]
-        [JsonProperty("properties", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, JSONSchemaPropsV1Beta1> Properties { get; } = new Dictionary<string, JSONSchemaPropsV1Beta1>();
+        [JsonProperty("properties")]
+        public Dictionary<string, JSONSchemaPropsV1Beta1> Properties { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Properties"/> property should be serialised.

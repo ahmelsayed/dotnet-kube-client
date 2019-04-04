@@ -46,8 +46,8 @@ namespace KubeClient.Models
         ///     A list of groups applied to the first process run in each container, in addition to the container's primary GID.  If unspecified, no groups will be added to any container.
         /// </summary>
         [YamlMember(Alias = "supplementalGroups")]
-        [JsonProperty("supplementalGroups", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<long> SupplementalGroups { get; } = new List<long>();
+        [JsonProperty("supplementalGroups")]
+        public IList<long> SupplementalGroups { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="SupplementalGroups"/> property should be serialised.
@@ -58,8 +58,8 @@ namespace KubeClient.Models
         ///     Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch.
         /// </summary>
         [YamlMember(Alias = "sysctls")]
-        [JsonProperty("sysctls", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<SysctlV1> Sysctls { get; } = new List<SysctlV1>();
+        [JsonProperty("sysctls")]
+        public IList<SysctlV1> Sysctls { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Sysctls"/> property should be serialised.

@@ -21,8 +21,8 @@ namespace KubeClient.Models
         ///     IP addresses which offer the related ports that are marked as ready. These endpoints should be considered safe for load balancers and clients to utilize.
         /// </summary>
         [YamlMember(Alias = "addresses")]
-        [JsonProperty("addresses", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<EndpointAddressV1> Addresses { get; } = new List<EndpointAddressV1>();
+        [JsonProperty("addresses")]
+        public IList<EndpointAddressV1> Addresses { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Addresses"/> property should be serialised.
@@ -33,8 +33,8 @@ namespace KubeClient.Models
         ///     IP addresses which offer the related ports but are not currently marked as ready because they have not yet finished starting, have recently failed a readiness check, or have recently failed a liveness check.
         /// </summary>
         [YamlMember(Alias = "notReadyAddresses")]
-        [JsonProperty("notReadyAddresses", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<EndpointAddressV1> NotReadyAddresses { get; } = new List<EndpointAddressV1>();
+        [JsonProperty("notReadyAddresses")]
+        public IList<EndpointAddressV1> NotReadyAddresses { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="NotReadyAddresses"/> property should be serialised.
@@ -45,8 +45,8 @@ namespace KubeClient.Models
         ///     Port numbers available on the related IP addresses.
         /// </summary>
         [YamlMember(Alias = "ports")]
-        [JsonProperty("ports", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<EndpointPortV1> Ports { get; } = new List<EndpointPortV1>();
+        [JsonProperty("ports")]
+        public IList<EndpointPortV1> Ports { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Ports"/> property should be serialised.

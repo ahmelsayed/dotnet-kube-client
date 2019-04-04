@@ -21,8 +21,8 @@ namespace KubeClient.Models
         ///     Except is a slice of CIDRs that should not be included within an IP Block Valid examples are "192.168.1.1/24" Except values will be rejected if they are outside the CIDR range
         /// </summary>
         [YamlMember(Alias = "except")]
-        [JsonProperty("except", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Except { get; } = new List<string>();
+        [JsonProperty("except")]
+        public IList<string> Except { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Except"/> property should be serialised.

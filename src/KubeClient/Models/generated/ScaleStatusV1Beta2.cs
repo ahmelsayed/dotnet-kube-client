@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     label query over pods that should match the replicas count. More info: http://kubernetes.io/docs/user-guide/labels#label-selectors
         /// </summary>
         [YamlMember(Alias = "selector")]
-        [JsonProperty("selector", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Selector { get; } = new Dictionary<string, string>();
+        [JsonProperty("selector")]
+        public Dictionary<string, string> Selector { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Selector"/> property should be serialised.

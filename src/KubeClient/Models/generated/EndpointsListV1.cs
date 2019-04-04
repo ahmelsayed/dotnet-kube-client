@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     List of endpoints.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<EndpointsV1> Items { get; } = new List<EndpointsV1>();
+        [JsonProperty("items")]
+        public override IList<EndpointsV1> Items { get; set; }
     }
 }

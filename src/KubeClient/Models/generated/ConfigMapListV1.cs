@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items is the list of ConfigMaps.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<ConfigMapV1> Items { get; } = new List<ConfigMapV1>();
+        [JsonProperty("items")]
+        public override IList<ConfigMapV1> Items { get; set; }
     }
 }

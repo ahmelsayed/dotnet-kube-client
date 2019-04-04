@@ -21,8 +21,8 @@ namespace KubeClient.Models
         ///     AccessModes contains the actual access modes the volume backing the PVC has. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1
         /// </summary>
         [YamlMember(Alias = "accessModes")]
-        [JsonProperty("accessModes", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> AccessModes { get; } = new List<string>();
+        [JsonProperty("accessModes")]
+        public IList<string> AccessModes { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="AccessModes"/> property should be serialised.
@@ -34,8 +34,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "type")]
         [YamlMember(Alias = "conditions")]
-        [JsonProperty("conditions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<PersistentVolumeClaimConditionV1> Conditions { get; } = new List<PersistentVolumeClaimConditionV1>();
+        [JsonProperty("conditions")]
+        public IList<PersistentVolumeClaimConditionV1> Conditions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Conditions"/> property should be serialised.
@@ -46,8 +46,8 @@ namespace KubeClient.Models
         ///     Represents the actual resources of the underlying volume.
         /// </summary>
         [YamlMember(Alias = "capacity")]
-        [JsonProperty("capacity", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public Dictionary<string, string> Capacity { get; } = new Dictionary<string, string>();
+        [JsonProperty("capacity")]
+        public Dictionary<string, string> Capacity { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Capacity"/> property should be serialised.

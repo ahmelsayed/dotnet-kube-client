@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items is the list of Namespace objects in the list. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<NamespaceV1> Items { get; } = new List<NamespaceV1>();
+        [JsonProperty("items")]
+        public override IList<NamespaceV1> Items { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     Items is the list of ThirdPartyResources.
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<ThirdPartyResourceV1Beta1> Items { get; } = new List<ThirdPartyResourceV1Beta1>();
+        [JsonProperty("items")]
+        public override IList<ThirdPartyResourceV1Beta1> Items { get; set; }
     }
 }

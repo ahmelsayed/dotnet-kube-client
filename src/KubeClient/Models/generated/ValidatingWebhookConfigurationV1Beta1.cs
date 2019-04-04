@@ -25,8 +25,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "name")]
         [YamlMember(Alias = "webhooks")]
-        [JsonProperty("webhooks", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<WebhookV1Beta1> Webhooks { get; } = new List<WebhookV1Beta1>();
+        [JsonProperty("webhooks")]
+        public IList<WebhookV1Beta1> Webhooks { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Webhooks"/> property should be serialised.

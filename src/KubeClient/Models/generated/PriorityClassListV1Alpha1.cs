@@ -15,7 +15,7 @@ namespace KubeClient.Models
         /// <summary>
         ///     items is the list of PriorityClasses
         /// </summary>
-        [JsonProperty("items", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public override List<PriorityClassV1Alpha1> Items { get; } = new List<PriorityClassV1Alpha1>();
+        [JsonProperty("items")]
+        public override IList<PriorityClassV1Alpha1> Items { get; set; }
     }
 }

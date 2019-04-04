@@ -14,8 +14,8 @@ namespace KubeClient.Models
         ///     Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
         /// </summary>
         [YamlMember(Alias = "command")]
-        [JsonProperty("command", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Command { get; } = new List<string>();
+        [JsonProperty("command")]
+        public IList<string> Command { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Command"/> property should be serialised.
@@ -75,8 +75,8 @@ namespace KubeClient.Models
         ///     List of sources to populate environment variables in the container. The keys defined within a source must be a C_IDENTIFIER. All invalid keys will be reported as an event when the container is starting. When a key exists in multiple sources, the value associated with the last source will take precedence. Values defined by an Env with a duplicate key will take precedence. Cannot be updated.
         /// </summary>
         [YamlMember(Alias = "envFrom")]
-        [JsonProperty("envFrom", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<EnvFromSourceV1> EnvFrom { get; } = new List<EnvFromSourceV1>();
+        [JsonProperty("envFrom")]
+        public IList<EnvFromSourceV1> EnvFrom { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="EnvFrom"/> property should be serialised.
@@ -101,8 +101,8 @@ namespace KubeClient.Models
         ///     Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
         /// </summary>
         [YamlMember(Alias = "args")]
-        [JsonProperty("args", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<string> Args { get; } = new List<string>();
+        [JsonProperty("args")]
+        public IList<string> Args { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Args"/> property should be serialised.
@@ -114,8 +114,8 @@ namespace KubeClient.Models
         /// </summary>
         [YamlMember(Alias = "ports")]
         [MergeStrategy(Key = "containerPort")]
-        [JsonProperty("ports", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<ContainerPortV1> Ports { get; } = new List<ContainerPortV1>();
+        [JsonProperty("ports")]
+        public IList<ContainerPortV1> Ports { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Ports"/> property should be serialised.
@@ -134,8 +134,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "devicePath")]
         [YamlMember(Alias = "volumeDevices")]
-        [JsonProperty("volumeDevices", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<VolumeDeviceV1> VolumeDevices { get; } = new List<VolumeDeviceV1>();
+        [JsonProperty("volumeDevices")]
+        public IList<VolumeDeviceV1> VolumeDevices { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="VolumeDevices"/> property should be serialised.
@@ -147,8 +147,8 @@ namespace KubeClient.Models
         /// </summary>
         [MergeStrategy(Key = "mountPath")]
         [YamlMember(Alias = "volumeMounts")]
-        [JsonProperty("volumeMounts", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<VolumeMountV1> VolumeMounts { get; } = new List<VolumeMountV1>();
+        [JsonProperty("volumeMounts")]
+        public IList<VolumeMountV1> VolumeMounts { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="VolumeMounts"/> property should be serialised.
@@ -167,8 +167,8 @@ namespace KubeClient.Models
         /// </summary>
         [YamlMember(Alias = "env")]
         [MergeStrategy(Key = "name")]
-        [JsonProperty("env", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<EnvVarV1> Env { get; } = new List<EnvVarV1>();
+        [JsonProperty("env")]
+        public IList<EnvVarV1> Env { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Env"/> property should be serialised.

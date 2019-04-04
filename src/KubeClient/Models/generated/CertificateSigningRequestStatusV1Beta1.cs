@@ -21,8 +21,8 @@ namespace KubeClient.Models
         ///     Conditions applied to the request, such as approval or denial.
         /// </summary>
         [YamlMember(Alias = "conditions")]
-        [JsonProperty("conditions", ObjectCreationHandling = ObjectCreationHandling.Reuse)]
-        public List<CertificateSigningRequestConditionV1Beta1> Conditions { get; } = new List<CertificateSigningRequestConditionV1Beta1>();
+        [JsonProperty("conditions")]
+        public IList<CertificateSigningRequestConditionV1Beta1> Conditions { get; set; }
 
         /// <summary>
         ///     Determine whether the <see cref="Conditions"/> property should be serialised.
